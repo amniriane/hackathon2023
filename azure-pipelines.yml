@@ -16,6 +16,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install -g serve   
-    serve -s build  
+    sudo npm install -g serve   
+    sudo serve -s build  
   displayName: 'npm install and build'
