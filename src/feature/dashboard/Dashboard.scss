@@ -1,7 +1,7 @@
 .layout-dashboard {
   display: flex;
   flex-direction: row;
-//   gap: 10px;
+  //   gap: 10px;
   width: 100%;
   height: 100%;
   flex: 1;
@@ -9,11 +9,122 @@
   .dashboard-content {
     flex: 1;
     display: flex;
-    
+    flex-direction: column;
+    padding: 20px;
+    // align-items: center;
+    gap: 70px;
+
     background-color: rgb(241, 241, 241);
     box-shadow: 5px 5px rgba(51, 51, 51, 0.178);
     flex-grow: 1;
     margin: 10px;
     border-radius: 15px;
+  }
+
+  .global {
+    .header {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        font-size: 24px;
+        font-weight: 500;
+        align-self: center;
+      }
+
+      .btn-details {
+        width: min-content;
+      }
+
+      .top-btn {
+        display: inline-flex;
+        justify-content: space-between;
+
+        .btn-details,
+        .btn-invoice {
+          background-color: black;
+          color: white;
+          border-radius: 5px;
+          padding: 5px 10px;
+          cursor: pointer;
+          display: inline-flex;
+          gap: 5px;
+          align-items: center;
+
+          .icon {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .sub-title {
+      font-size: 18px;
+    }
+
+    .state {
+      display: inline-flex;
+      justify-content: space-between;
+
+      
+      .cost-box {
+        background-color: rgb(82, 149, 250);
+        display: flex;
+        gap: 5px;
+        align-items: baseline;
+        width: min-content;
+        border: 1px solid rgb(190, 190, 190);
+        padding: 10px;
+        border-radius: 5px;
+
+        .price {
+          font-size: 30px;
+          // color: rgb(67, 141, 252);
+          color: white;
+        }
+        .percent {
+          font-size: 15px;
+          color: rgb(128, 221, 46);
+        }
+      }
+    }
+
+    .data {
+      margin-top: auto;
+      .filter-data {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .date {
+          cursor: pointer;
+          border: 1px solid rgb(187, 187, 187);
+          border-radius: 10px;
+          padding: 5px;
+          display: inline-flex;
+          gap: 5px;
+          // align-items: baseline;
+        }
+
+        .type {
+          border: 1px solid rgb(187, 187, 187);
+          border-radius: 10px;
+          display: inline-flex;
+          gap: 10px;
+          overflow: hidden;
+          .btn-type {
+            cursor: pointer;
+            padding: 5px;
+            // border: 1px solid rgb(187, 187, 187);
+
+            &.activated {
+              background-color: black;
+              color: white;
+            }
+          }
+        }
+      }
+    }
   }
 }

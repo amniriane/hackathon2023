@@ -1,0 +1,30 @@
+.main-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  background-color: rgb(241, 241, 241);
+  margin: 10px;
+  border-radius: 15px;
+
+  .list-invoice {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .list-item {
+      display: inline-flex;
+      justify-content: space-between;
+
+      .title {
+        font-weight: 500;
+      }
+    }
+
+    .divider {
+      height: 1px;
+      background-color: black;
+    }
+  }
+}

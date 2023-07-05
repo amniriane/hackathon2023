@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import App from "./App";
 import Dashboard from "./feature/dashboard/Dashboard";
+import ListInvoices from "./feature/invoices/List";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +21,11 @@ const router = createBrowserRouter([
         children: [
           {
             path: "default",
-            element: <div>General</div>,
+            element: <Dashboard />,
           },
           {
             path: ":id",
-            element: <Dashboard/>,
+            element: <Dashboard />,
           },
           {
             path: "*",
@@ -67,7 +68,7 @@ const router = createBrowserRouter([
       },
       {
         path: "facture",
-        element: <div>Factures</div>,
+        element: <ListInvoices />,
       },
       {
         path: "*",
