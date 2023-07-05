@@ -3,13 +3,22 @@ import { useParams } from "react-router-dom";
 import "./Dashboard.scss";
 import { fakers } from "../../fakers";
 import { DashboardChart } from "./chart/Chart";
+import { DashboardTable } from "./table/Table";
+import { DashboardLayout } from "./layout/Layout";
 
 const Dashboard = () => {
-  const [type, setType] = React.useState(1);
+  const [type, setType] = React.useState(0);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const switchType = (value) => {
     setType(value);
   };
+
+  var name = [
+    fakers[0]["Groups/0/Keys/0"],
+    fakers[0]["Groups/1/Keys/0"],
+    fakers[0]["Groups/2/Keys/0"],
+  ];
 
   var first = fakers
     .slice(0, 10)
@@ -20,7 +29,6 @@ const Dashboard = () => {
   var third = fakers
     .slice(0, 10)
     .map((f) => f["Groups/2/Metrics/BlendedCost/Amount"]);
-  var xLabels = fakers.slice(0, 10).map((f) => f["TimePeriod/Start"]);
 
   var sum = [...first, ...second, ...third].reduce(
     (accumulator, currentValue) => {
@@ -29,13 +37,20 @@ const Dashboard = () => {
     0
   );
 
-  const { id } = useParams();
+  var sumDetails = [
+    first[selectedIndex],
+    second[selectedIndex],
+    third[selectedIndex],
+  ].reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  }, 0);
 
   return (
     <div className="layout-dashboard">
+      <DashboardLayout title="Général"></DashboardLayout>
       <div className="dashboard-content global">
         <div className="header">
-          <div className="title">Général</div>
+          <div className="title">{name[selectedIndex]}</div>
           <div className="top-btn">
             <div className="btn-details">
               Details
@@ -51,14 +66,8 @@ const Dashboard = () => {
           <div>
             <div className="sub-title">Coût total</div>
             <div className="cost-box">
-              <div className="price">{sum}</div>
+              <div className="price">{sumDetails}</div>
               <div className="percent">+50%</div>
-            </div>
-          </div>
-          <div>
-            <div className="sub-title">Nombre de service</div>
-            <div className="cost-box">
-              <div className="price">4</div>
             </div>
           </div>
         </div>
@@ -83,10 +92,11 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <DashboardChart />
+          <div className="data-display">
+            {type == 0 ? <DashboardChart /> : <DashboardTable />}
+          </div>
         </div>
       </div>
-      <div className="dashboard-content"></div>
     </div>
   );
 };

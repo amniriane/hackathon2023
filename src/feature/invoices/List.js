@@ -1,20 +1,12 @@
 import React from "react";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 import "./List.scss";
-import InputLabel from "@mui/material/InputLabel";
-import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import { Divider } from "@mui/material";
 
 const ListInvoices = () => {
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
+  
   var dateNow = new Date();
+
   const invoices = [
     {
       id: 1,
@@ -37,23 +29,13 @@ const ListInvoices = () => {
       date: dateNow,
     },
   ];
- 
 
   return (
     <div className="main-content">
       <h2>Factures</h2>
-      <div>
-        {/* <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select> */}
+      <div className="btn-date">
+        Date
+        <span class="material-icons-outlined">arrow_drop_down</span>
       </div>
       <div className="list-invoice">
         {invoices.map((invoice) => (
@@ -66,7 +48,7 @@ const ListInvoices = () => {
                 <span class="material-icons-outlined">file_download</span>
               </IconButton>
             </div>
-          <Divider></Divider>
+            <Divider></Divider>
           </>
         ))}
       </div>

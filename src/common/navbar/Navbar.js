@@ -31,7 +31,7 @@ const Navbar = () => {
             {items.map((item) => (
               <li>
                 <NavLink to={"/dashboard/" + item} activeClassName="active">
-                  Env {item}
+                  Environnement {item}
                 </NavLink>
               </li>
             ))}

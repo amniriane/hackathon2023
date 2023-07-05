@@ -1,0 +1,22 @@
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  .notification-header {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .message {
+    font-size: 16px;
+    padding: 10px 5px;
+  }
+
+  .activated {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+  }
+}

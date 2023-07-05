@@ -1,12 +1,5 @@
-.layout-dashboard {
-  display: flex;
-  flex-direction: row;
-  //   gap: 10px;
-  width: 100%;
-  height: 100%;
-  flex: 1;
 
-  .dashboard-content {
+.dashboard-content {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -14,7 +7,7 @@
     // align-items: center;
     gap: 70px;
 
-    background-color:white;
+    background-color: rgb(241, 241, 241);
     box-shadow: 5px 5px rgba(51, 51, 51, 0.178);
     flex-grow: 1;
     margin: 10px;
@@ -67,7 +60,7 @@
       justify-content: space-between;
 
       .cost-box {
-        background-color: black;
+        background-color: rgb(82, 149, 250);
         display: flex;
         gap: 5px;
         align-items: baseline;
@@ -90,9 +83,6 @@
 
     .data {
       margin-top: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
 
       .data-display {
         width: 500px;
@@ -134,4 +124,3 @@
       }
     }
   }
-}

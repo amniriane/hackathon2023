@@ -8,6 +8,18 @@
   margin: 10px;
   border-radius: 15px;
 
+  .btn-date {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    width: min-content;
+    border-radius: 5px;
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+  }
+
   .list-invoice {
     display: flex;
     flex-direction: column;

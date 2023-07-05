@@ -10,6 +10,7 @@ import {
 import App from "./App";
 import Dashboard from "./feature/dashboard/Dashboard";
 import ListInvoices from "./feature/invoices/List";
+import { NotificationLayout } from "./feature/notification/Layout";
 
 const router = createBrowserRouter([
   {
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
       },
       {
         path: "notification",
-        element: <div>Notifications</div>,
+        element: <NotificationLayout></NotificationLayout>,
       },
       {
         path: "facture",
