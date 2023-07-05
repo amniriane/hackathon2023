@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 import logo from "../../assets/logo.png";
 import { useMatch } from "react-router-dom";
+import "material-icons/iconfont/material-icons.css";
 
 const Navbar = () => {
   const matchAdmin = useMatch("/admin/*");
@@ -11,18 +12,17 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <img src={logo} alt="La maison jungle" className="logo" />
+      <img src={logo} className="logo" />
       <div className="divider"></div>
-      <ul className="list">
+      <ul className="path">
         <li
-          className={
-            matchDashboard != null
-              ? "main dashboard activated"
-              : "main dashboard"
-          }
+          className={matchDashboard != null ? "sub main activated" : "sub main"}
         >
-          <div className="title">Dashboard</div>
-          <ul className="list">
+          <div className="title">
+            <span class="icon material-icons-outlined">analytics</span>
+            <span className="label">Dashboard</span>
+          </div>
+          <ul className="sub-list">
             <li>
               <NavLink to="/dashboard/default" activeClassName="active">
                 Général
@@ -41,22 +41,27 @@ const Navbar = () => {
           <NavLink
             to="/notification"
             activeClassName="active"
-            className="title"
+            className="title primary"
           >
-            Notifications
+            <span class="icon material-icons-outlined">notifications</span>
+            <span className="label">Notifications</span>
           </NavLink>
         </li>
         <li className="main">
-          <NavLink to="/facture" activeClassName="active" className="title">
-            Factures
+          <NavLink
+            to="/facture"
+            activeClassName="active"
+            className="title primary"
+          >
+            <span class="icon material-icons-outlined">request_quote</span>
+            <span className="label">Factures</span>
           </NavLink>
         </li>
-        <li
-          className={
-            matchAdmin != null ? "main dashboard activated" : "main dashboard"
-          }
-        >
-          <div className="title">Admin panel</div>
+        <li className={matchAdmin != null ? "sub main activated" : "sub main"}>
+          <div className="title">
+            <span class="icon material-icons-outlined">edit</span>
+            <span className="label">Admin panel</span>
+          </div>
           <ul className="list">
             <li>
               <NavLink to="/admin/new-client" activeClassName="active">
@@ -76,7 +81,6 @@ const Navbar = () => {
           </ul>
         </li>
       </ul>
-
       <div className="avatar">
         <div className="divider"></div>
         <div className="user"></div>
