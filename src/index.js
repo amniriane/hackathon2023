@@ -12,6 +12,12 @@ import Dashboard from "./feature/dashboard/Dashboard";
 import ListInvoices from "./feature/invoices/List";
 import { NotificationLayout } from "./feature/notification/Layout";
 
+import CreateClientForm from "./feature/AdminPanel/create_user";
+import AdminCreationForm from "./feature/AdminPanel/create_admin";
+import Modification from "./feature/AdminPanel/modification";
+import Panel from "./feature/AdminPanel/create_panel";
+import { AdminPanel } from "./feature/AdminPanel/admin_panel";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +25,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "dashboard",
+        element: <Dashboard />,
         children: [
           {
             path: "default",
@@ -40,26 +47,24 @@ const router = createBrowserRouter([
       },
       {
         path: "admin",
+        element: <AdminPanel></AdminPanel>,
         children: [
           {
+            path: "new-panel",
+            element: <Panel />,
+          },
+          {
             path: "new-client",
-            element: <div>form client</div>,
+            element: <CreateClientForm />,
+            // element:<Panel />,
           },
           {
             path: "new-admin",
-            element: <div>form admin</div>,
+            element: <AdminCreationForm />,
           },
           {
             path: "edit",
-            element: <div>form admin</div>,
-          },
-          {
-            path: "*",
-            element: <Navigate to="new-client" replace />,
-          },
-          {
-            path: "",
-            element: <Navigate to="new-client" replace />,
+            element: <Modification />,
           },
         ],
       },
@@ -73,11 +78,7 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <Navigate to="dashboard" replace />,
-      },
-      {
-        path: "",
-        element: <Navigate to="dashboard" replace />,
+        element: <Navigate to="/dashboard/default" replace />,
       },
     ],
   },
@@ -90,7 +91,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}>
+      <App />
+    </RouterProvider>
   </React.StrictMode>
 );
 

@@ -1,0 +1,163 @@
+/* Style.css */
+
+  /* Style pour le formulaire */
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 100px;
+    // align-items: center;
+    // position: absolute;
+    // top: 35%;
+    // left: 45%;
+    // transform: translate(-45%, -45%);
+    // padding: 20px;
+  }
+
+  // .UserForm {
+  //   position: absolute;
+  //   visibility: visible;
+  //   opacity: 1;
+  // }
+
+  // .FormHeader {
+  //   padding: 100px 0px;
+
+  // }
+
+  h1{
+    padding: 20px 0px;
+    font-family: cursive;
+  }
+
+  button, label{
+    font-size: 20px;
+    font-family: cursive;
+  }
+
+  .Box{
+    font-family: cursive;
+  }
+
+  /* Style pour les champs de saisie */
+  form input[type="text"], form input[type="email"]{
+    font-family: cursive;
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+  }
+  
+  /* Style pour le bouton "créer l'utilisateur" */
+  form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  #email {
+    border-radius: 5px; /* Arrondir les coins du champ de saisie */
+    border: 2px solid black; /* Ajouter une bordure noire */
+  }
+
+  #prenom {
+    border-radius: 5px; /* Arrondir les coins du champ de saisie */
+    border: 2px solid black; /* Ajouter une bordure noire */
+  }
+
+  #nom {
+    border-radius: 5px; /* Arrondir les coins du champ de saisie */
+    border: 2px solid black; /* Ajouter une bordure noire */
+  }
+  
+
+  /* PANEL */
+
+  /* Champs de saisie PANEL */
+
+  #info_entreprise
+  {
+    border-radius: 5px; /* Arrondir les coins du champ de saisie */
+    border: 2px solid black; /* Ajouter une bordure noire */
+  }
+
+  #marge
+  {
+    border-radius: 5px; /* Arrondir les coins du champ de saisie */
+    border: 2px solid black; /* Ajouter une bordure noire */
+  }
+
+
+  /* MENU DEROULANT PANEL */
+  #entreprise
+  {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    border-radius: 5px; /* Arrondir les coins du champ de saisie */
+    border: 2px solid black; /* Ajouter une bordure noire */
+  }
+
+  #environnement
+  {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    border-radius: 5px; /* Arrondir les coins du champ de saisie */
+    border: 2px solid black; /* Ajouter une bordure noire */
+  }
+
+  #service
+  {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    border-radius: 5px; /* Arrondir les coins du champ de saisie */
+    border: 2px solid black; /* Ajouter une bordure noire */
+  }
+
+
+  #utilisateur
+  {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    border-radius: 5px; /* Arrondir les coins du champ de saisie */
+    border: 2px solid black; /* Ajouter une bordure noire */
+  }
+
+  label {
+    text-align: left;
+  }
+  
+  input {
+    text-align: left;
+  }
+  
+  /* Réinitialisation des styles par défaut */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  button{
+    border-radius: 5px; /* Arrondir les coins du champ de saisie */
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  img {
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10px;
+  }

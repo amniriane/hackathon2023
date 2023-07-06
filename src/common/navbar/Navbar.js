@@ -64,7 +64,7 @@ const Navbar = () => {
           </div>
           <ul className="list">
             <li>
-              <NavLink to="/admin/new-client" activeClassName="active">
+              <NavLink to="/admin/new-panel" activeClassName="active">
                 Création d'un client
               </NavLink>
             </li>
