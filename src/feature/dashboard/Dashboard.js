@@ -93,7 +93,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="data-display">
-            {type == 0 ? <DashboardChart /> : <DashboardTable />}
+            {type == 0 ? <DashboardTable /> : <DashboardChart />}
           </div>
         </div>
       </div>

@@ -80,12 +80,16 @@ const router = createBrowserRouter([
         path: "*",
         element: <Navigate to="/dashboard/default" replace />,
       },
+      {
+        path: "",
+        element: <Navigate to="/dashboard/default" replace />,
+      }
     ],
   },
   {
     path: "*",
     element: <Navigate to="/" replace />,
-  },
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
